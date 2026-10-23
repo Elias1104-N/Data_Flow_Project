@@ -33,6 +33,10 @@ H1: al menos un periodo difiere, o hay una tendencia monótona.
 | Secundaria 1 | C2 (0/1) | Intérprete mujer (sí/no) | Chi-cuadrado, o Fisher si alguna esperada < 5 | OR con IC 95 % y phi |
 | Secundaria 2 | MATTR | Periodo | Kruskal-Wallis + Mann-Kendall sobre la mediana anual | Épsilon cuadrado y tau de Kendall |
 
+## Definición de "intérprete mujer"
+interprete_mujer = 1 si al menos una mujer está acreditada como intérprete (principal o
+invitada) en la lista de Billboard; 0 si solo hay hombres.
+
 ## Alcance
 Los resultados describen las canciones de reggaetón más exitosas en la lista de
 Billboard (Estados Unidos), no todo el género. El estudio mide asociaciones, no

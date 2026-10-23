@@ -26,6 +26,10 @@ def clave(texto):
 
 
 def main():
+    if (DATA / "muestra.csv").exists():
+        print("muestra.csv ya existe: no se vuelve a sortear (para no borrar lo que ya llenaron).")
+        print("Si de verdad quieren volver a sortear, borren data/muestra.csv y corran de nuevo.")
+        return True
     ruta = DATA / "marco_muestral.csv"
     marco = pd.read_csv(ruta)
     faltan = set(COLUMNAS_MARCO) - set(marco.columns)
