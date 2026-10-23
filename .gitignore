@@ -1,0 +1,19 @@
+# Letras: NUNCA se suben (solo se sube el LEEME para que exista la carpeta)
+letras/*
+!letras/LEEME.txt
+
+# Resultados: se sube la carpeta, pero no lo que genera cada corrida
+resultados/*
+!resultados/.gitkeep
+
+# Clave de la API (si algún día la usan)
+.env
+
+# Entorno virtual (con o sin punto, según como lo haya creado PyCharm)
+.venv/
+venv/
+
+# Archivos de PyCharm y de Python
+.idea/
+__pycache__/
+*.pyc

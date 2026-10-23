@@ -1,0 +1,5 @@
+patron,dimension,tipo,region,criterio
+# Las líneas que empiezan con # se ignoran. Las 3 filas siguientes son EJEMPLOS: reemplácenlas por su léxico.
+perre\w*,baile,raiz,general,Verbo y sustantivo del baile característico del género (perreo; perrear; perreando)
+(?:dinero|plata|billetes?|chavos),dinero,exacto,general,Referencias directas al dinero (chavos = PR)
+(?:pistolas?|balas?|rifles?),violencia,exacto,general,Armas mencionadas por su nombre

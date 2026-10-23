@@ -1,0 +1,9 @@
+pandas>=2.2
+numpy
+scipy
+statsmodels>=0.14
+scikit-learn
+pymannkendall
+matplotlib
+python-dotenv
+anthropic
