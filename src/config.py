@@ -16,7 +16,7 @@ for carpeta in (DATA, LETRAS, DOCS, RES):
 # --- Diseño muestral (paso 2) -----------------------------------------------
 CORTES = [2009, 2013, 2017, 2021, 2025]
 PERIODOS = ["2010-13", "2014-17", "2018-21", "2022-25"]
-N_POR_ESTRATO = 40
+N_POR_ESTRATO = 50
 N_VALIDACION = 50                 # max(50, 20 % de la muestra)
 
 # --- Instrumento (pasos 3 y 5) ----------------------------------------------
