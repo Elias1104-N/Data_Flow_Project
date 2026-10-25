@@ -1,5 +1,24 @@
 patron,dimension,tipo,region,criterio
-# Las líneas que empiezan con # se ignoran. Las 3 filas siguientes son EJEMPLOS: reemplácenlas por su léxico.
-perre\w*,baile,raiz,general,Verbo y sustantivo del baile característico del género (perreo; perrear; perreando)
-(?:dinero|plata|billetes?|chavos),dinero,exacto,general,Referencias directas al dinero (chavos = PR)
-(?:pistolas?|balas?|rifles?),violencia,exacto,general,Armas mencionadas por su nombre
+# Patrones en minúsculas y sin tildes (el texto se normaliza así antes de contar). Las líneas con # se ignoran.
+# Regla de inclusión: solo términos de significado estable. Se excluyen palabras ambiguas (tren; vía; matar; tocar; bomba).
+(?:sexo|sexual|sexuales),sexual,exacto,general,Mención directa del sexo
+(?:desnud\w*|encuer\w*),sexual,raiz,general,Desnudez (encuerar = desnudar)
+bellac\w*,sexual,jerga,PR,Excitación sexual (bellaco/bellaca/bellaquear)
+(?:hacerlo|lo hicimos|lo hacemos|hacer el amor|hacerte el amor),sexual,exacto,general,Acto sexual en forma explícita
+(?:gemi\w*|gemid\w*),sexual,raiz,general,Gemidos en contexto sexual
+azot\w*,sexual,raiz,general,Azotes (visto en la prueba piloto)
+(?:nalgas?|trasero|culo|booty),cuerpo,exacto,general,Parte del cuerpo como objeto de deseo
+(?:cintura|caderas?|curvas?),cuerpo,exacto,general,Figura
+(?:piernas?|pechos?|senos?|tetas?),cuerpo,exacto,general,Partes del cuerpo
+cuerpazo,cuerpo,exacto,general,Elogio del cuerpo
+(?:operada|cirugias?|implantes?),cuerpo,exacto,general,Intervenciones estéticas
+perre\w*,baile,raiz,general,Perreo (perreo; perrear; perreando)
+(?:bailar|bailamos|bailando|baila|bailes?),baile,exacto,general,Baile
+(?:discoteca|disco|pista),baile,exacto,general,Espacio de baile
+(?:soltera|independiente),agencia,exacto,general,Autodescripción de independencia
+(?:yo decido|yo mando|me mando sola|soy mia|no necesito a nadie),agencia,exacto,general,Autonomía en primera persona
+(?:pistolas?|glock|rifles?|balas?|tiros?|plomo),violencia,exacto,general,Armas y disparos (solo cuenta; el sentido lo decide C4)
+(?:disparar\w*|dispar[eo]\w*),violencia,raiz,general,Acción de disparar
+(?:dinero|plata|billetes?|chavos|cuartos|millones?),dinero,exacto,general,Dinero (chavos y cuartos = PR)
+(?:gucci|prada|louis|versace|balenciaga|dior|chanel|rolex|cartier),dinero,exacto,general,Marcas de lujo
+(?:lambo|lamborghini|ferrari|bugatti|bentley),dinero,exacto,general,Carros de lujo
