@@ -1,24 +1,40 @@
 patron,dimension,tipo,region,criterio
-# Patrones en minúsculas y sin tildes (el texto se normaliza así antes de contar). Las líneas con # se ignoran.
-# Regla de inclusión: solo términos de significado estable. Se excluyen palabras ambiguas (tren; vía; matar; tocar; bomba).
-(?:sexo|sexual|sexuales),sexual,exacto,general,Mención directa del sexo
-(?:desnud\w*|encuer\w*),sexual,raiz,general,Desnudez (encuerar = desnudar)
-bellac\w*,sexual,jerga,PR,Excitación sexual (bellaco/bellaca/bellaquear)
-(?:hacerlo|lo hicimos|lo hacemos|hacer el amor|hacerte el amor),sexual,exacto,general,Acto sexual en forma explícita
-(?:gemi\w*|gemid\w*),sexual,raiz,general,Gemidos en contexto sexual
-azot\w*,sexual,raiz,general,Azotes (visto en la prueba piloto)
-(?:nalgas?|trasero|culo|booty),cuerpo,exacto,general,Parte del cuerpo como objeto de deseo
-(?:cintura|caderas?|curvas?),cuerpo,exacto,general,Figura
-(?:piernas?|pechos?|senos?|tetas?),cuerpo,exacto,general,Partes del cuerpo
-cuerpazo,cuerpo,exacto,general,Elogio del cuerpo
-(?:operada|cirugias?|implantes?),cuerpo,exacto,general,Intervenciones estéticas
-perre\w*,baile,raiz,general,Perreo (perreo; perrear; perreando)
-(?:bailar|bailamos|bailando|baila|bailes?),baile,exacto,general,Baile
-(?:discoteca|disco|pista),baile,exacto,general,Espacio de baile
-(?:soltera|independiente),agencia,exacto,general,Autodescripción de independencia
-(?:yo decido|yo mando|me mando sola|soy mia|no necesito a nadie),agencia,exacto,general,Autonomía en primera persona
-(?:pistolas?|glock|rifles?|balas?|tiros?|plomo),violencia,exacto,general,Armas y disparos (solo cuenta; el sentido lo decide C4)
-(?:disparar\w*|dispar[eo]\w*),violencia,raiz,general,Acción de disparar
-(?:dinero|plata|billetes?|chavos|cuartos|millones?),dinero,exacto,general,Dinero (chavos y cuartos = PR)
-(?:gucci|prada|louis|versace|balenciaga|dior|chanel|rolex|cartier),dinero,exacto,general,Marcas de lujo
-(?:lambo|lamborghini|ferrari|bugatti|bentley),dinero,exacto,general,Carros de lujo
+# LEXICO v1.0 (25/10/2026). Patrones en minusculas y sin tildes: el texto se normaliza asi antes de contar (la ñ se conserva).
+# Uso: el lexico CUENTA menciones; no decide categorias (eso lo hace el libro de codigos). Las lineas con # se ignoran.
+# Regla de inclusion: en las dimensiones tematicas solo entran terminos de significado estable en el genero.
+# Las expresiones ambiguas (tren; via; matar; tocar; bomba; muerto) no entran ahi: las de doble sentido sexual se cuentan aparte como candidatas.
+# Tipos: exacto = palabra o frase literal | raiz = cubre conjugaciones y derivados | diminutivo | jerga | variante = ortografia o anglicismo | doble_sentido = candidata (no implica C1)
+(?:sexo|sexual|sexuales),sexual,exacto,general,Mencion directa del sexo
+(?:desnud\w*|encuer\w*),sexual,raiz,general,Desnudez (incluye desnudita; encuerar = desnudar en MX)
+bellac\w*,sexual,jerga,PR,Excitacion sexual (bellaco; bellaca; bellaquear; bellaqueo)
+(?:hacerlo|lo hicimos|lo hacemos|hacer el amor|hacerte el amor|hicimos el amor),sexual,exacto,general,Acto sexual nombrado de forma explicita
+(?:gemi\w*|gemid\w*),sexual,raiz,general,Gemidos
+azot\w*,sexual,raiz,general,Azotes (observado en la prueba piloto)
+(?:sin ropa|en la cama|a la cama|mi cama|tu cama),sexual,exacto,general,Escena de intimidad (frases; la palabra cama sola no entra)
+(?:chingar\w*|chingamos|chingando),sexual,jerga,MX,Acto sexual (vulgar)
+(?:nalg\w*|trasero|culo|culito|booty),cuerpo,raiz,general,Trasero (incluye diminutivos nalguita; nalgona; culito)
+(?:cintur\w*|cadera\w*|curva\w*),cuerpo,raiz,general,Figura (incluye cinturita; caderita; curvita)
+(?:pierna\w*|pecho\w*|seno\w*|teta\w*),cuerpo,raiz,general,Partes del cuerpo (incluye piernotas; teticas)
+(?:cuerpazo|cuerpito|tremendo cuerpo|ese cuerpo),cuerpo,exacto,general,Elogio del cuerpo como objeto (frases; cuerpo solo no entra)
+toto,cuerpo,jerga,PR,Genitales femeninos (vulgar)
+(?:operad[ao]\w*|cirugia\w*|implante\w*|silicona\w*),cuerpo,raiz,general,Intervenciones esteticas
+perre\w*,baile,raiz,general,Perreo (perreo; perrear; perreando; perreito)
+(?:bail\w*),baile,raiz,general,Baile (bailar; bailando; bailoteo)
+(?:discoteca|disco|pista|party|fiesta|jangueo|janguear),baile,variante,general,Espacio o situacion de baile (janguear = salir de fiesta en PR)
+(?:dembow|reggaeton|regueton|reguet\w*|reggaet\w*),baile,variante,general,Mencion del genero (variantes ortograficas)
+(?:soltera|independiente|empoderad\w*),agencia,exacto,general,Autodescripcion de independencia
+(?:yo decido|yo mando|me mando sola|soy mia|no necesito a nadie|me voy sola|salgo sola|perreo sola|perrea sola|bailo sola),agencia,exacto,general,Autonomia en primera persona o descrita
+(?:pistolas?|glock|rifles?|ak|metralletas?|cuchillos?|navajas?),violencia,exacto,general,Armas por su nombre (el sentido literal lo decide C4)
+(?:balas?|tiros?|plomo|balacera\w*|tiroteo\w*),violencia,exacto,general,Disparos
+(?:dispar\w*),violencia,raiz,general,Accion de disparar
+(?:dinero|plata|billete\w*|chavos|cuartos|millon\w*|lana|feria),dinero,raiz,general,Dinero (chavos y cuartos = PR; lana y feria = MX)
+(?:gucci|prada|louis|vuitton|versace|balenciaga|dior|chanel|fendi|rolex|cartier|patek|audemars),dinero,exacto,general,Marcas de lujo
+(?:lambo|lamborghini|ferrari|bugatti|bentley|rolls|mclaren),dinero,exacto,general,Carros de lujo
+(?:diamante\w*|joya\w*|prenda\w*|champan|champagne|moet|dom perignon),dinero,raiz,general,Ostentacion (prenda = joya en el genero)
+(?:comert\w*|te como|me comes|comerte toda),doble_sentido,doble_sentido,general,Comer como metafora sexual (candidata)
+(?:dale duro|darte duro|te doy duro|dartelo|darle duro),doble_sentido,doble_sentido,general,Dar duro como metafora sexual (candidata)
+(?:partirte|romperte|te parto|te rompo),doble_sentido,doble_sentido,general,Romper o partir como metafora sexual (candidata)
+(?:montarte|montate|treparte|treparnos|subete encima),doble_sentido,doble_sentido,general,Montar o trepar (observado en la prueba piloto; candidata)
+(?:mi tren|tu via),doble_sentido,doble_sentido,general,Tren y via (observado en la prueba piloto; candidata)
+(?:mojad\w*|mojarte|te mojas),doble_sentido,doble_sentido,general,Mojarse como metafora sexual (candidata)
+(?:huracan|maquina|fiera),doble_sentido,doble_sentido,general,Mujer comparada con fuerza o maquina en contexto de perreo (observado en la prueba piloto; candidata)
