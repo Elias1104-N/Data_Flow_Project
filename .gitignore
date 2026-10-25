@@ -21,3 +21,6 @@ __pycache__/
 # Prueba piloto del libro de códigos (no se sube)
 data/practica.csv
 data/piloto_h*.csv
+
+# Herramienta local para renombrar letras (no se sube)
+src/renombrar_letras.py

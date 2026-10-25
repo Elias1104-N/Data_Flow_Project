@@ -8,7 +8,7 @@ import re
 import unicodedata
 import numpy as np
 import pandas as pd
-from src.config import DATA, DOCS, LETRAS
+from src.config import DATA, DOCS, LETRAS, leer_csv
 
 
 def normalizar(texto):
@@ -49,14 +49,22 @@ def main():
         print("Falta data/muestra.csv (corran el paso 2).")
         return False
     muestra = pd.read_csv(DATA / "muestra.csv")
+    # Los metadatos completados a mano viven en registro_letras.csv (muestra.csv no se edita)
+    registro = DATA / "registro_letras.csv"
+    if registro.exists():
+        meta = ["interprete_mujer", "pais_artista_principal", "colaboracion"]
+        reg = leer_csv(registro)[["id"] + meta]
+        muestra = muestra.drop(columns=meta).merge(reg, on="id", how="left")
     lexico = pd.read_csv(DOCS / "lexico.csv", comment="#").dropna(subset=["patron"])
-    faltan = [i for i in muestra.id if not (LETRAS / f"{i}.txt").exists()]
+    def falta(i):  # no existe, o está vacía
+        archivo = LETRAS / f"{i}.txt"
+        return not archivo.exists() or archivo.stat().st_size <= 50
+    faltan = [i for i in muestra.id if falta(i)]
     if faltan:
         print(f"Faltan {len(faltan)} letras en letras/ (por ejemplo: {faltan[:5]}).")
         return False
     medidas = pd.DataFrame([medir(i, lexico) for i in muestra.id])
     base = muestra.merge(medidas, on="id")
-    base["popularidad"] = 101 - base.posicion
     base.to_csv(DATA / "base_texto.csv", index=False)
     print(f"Medidas calculadas para {len(base)} canciones.")
     print(medidas.describe().round(2).T[["mean", "50%", "min", "max"]])
