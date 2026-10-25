@@ -29,3 +29,11 @@ MODELO = "claude-sonnet-5-5"      # anoten aquí el modelo exacto que usen; es p
 # --- Regla de validez (paso 6), fijada ANTES de ver resultados --------------
 KAPPA_MIN = 0.61
 IC_INF_MIN = 0.40
+
+
+import pandas as pd
+
+
+def leer_csv(ruta):
+    """Lee un CSV separado por comas o por punto y coma (como lo guarda Excel en español)."""
+    return pd.read_csv(ruta, sep=None, engine="python", encoding="utf-8-sig")

@@ -17,3 +17,7 @@ venv/
 .idea/
 __pycache__/
 *.pyc
+
+# Prueba piloto del libro de códigos (no se sube)
+data/practica.csv
+data/piloto_h*.csv
