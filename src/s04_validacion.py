@@ -11,7 +11,7 @@ Flujo:
 import numpy as np
 import pandas as pd
 from sklearn.metrics import cohen_kappa_score, confusion_matrix
-from src.config import DATA, RES, SEMILLA, CATS, KAPPA_MIN, IC_INF_MIN
+from src.config import DATA, RES, SEMILLA, CATS, KAPPA_MIN, IC_INF_MIN, leer_csv
 
 
 def kappa_ic(a, b, B=2000):
@@ -37,7 +37,9 @@ def resumen(a, b):
 def leer_completo(ruta, columnas):
     if not ruta.exists():
         return None
-    df = pd.read_csv(ruta).sort_values("id").reset_index(drop=True)
+    df = leer_csv(ruta).sort_values("id").reset_index(drop=True)
+    if "ambiguo" in df.columns:  # ambiguo vacío = no fue ambigua
+        df["ambiguo"] = df["ambiguo"].fillna(0)
     if df[columnas].isna().any().any():
         return None
     return df
@@ -60,7 +62,7 @@ def main():
     if not ruta_cons.exists():
         cons = h1[["id"]].copy()
         for c in CATS:
-            cons[c] = np.where(h1[c] == h2[c], h1[c], np.nan)
+            cons[c] = h1[c].where(h1[c] == h2[c]).astype("Int64")
         cons["ambiguo"] = ((h1.ambiguo == 1) | (h2.ambiguo == 1)).astype(int)
         cons.to_csv(ruta_cons, index=False)
         pd.DataFrame(filas).round(3).to_csv(RES / "tabla_kappas_humanos.csv", index=False)
