@@ -61,6 +61,12 @@ def main():
         return not archivo.exists() or archivo.stat().st_size <= 50
     faltan = [i for i in muestra.id if falta(i)]
     if faltan:
+        # Sin letras (por ejemplo, en un clon limpio del repositorio, donde las letras no se
+        # suben por derechos de autor) se usa la base_texto.csv ya calculada y versionada.
+        if len(faltan) == len(muestra) and (DATA / "base_texto.csv").exists():
+            print("No hay letras en letras/ (no se suben al repositorio). Se usa la "
+                  "data/base_texto.csv ya calculada; las medidas no se recalculan.")
+            return True
         print(f"Faltan {len(faltan)} letras en letras/ (por ejemplo: {faltan[:5]}).")
         return False
     medidas = pd.DataFrame([medir(i, lexico) for i in muestra.id])

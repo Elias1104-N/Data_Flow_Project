@@ -33,6 +33,12 @@ H1: al menos un periodo difiere, o hay una tendencia monótona.
 | Secundaria 1 | C2 (0/1) | Intérprete mujer (sí/no) | Chi-cuadrado, o Fisher si alguna esperada < 5 | OR con IC 95 % y phi |
 | Secundaria 2 | MATTR | Periodo | Kruskal-Wallis + Mann-Kendall sobre la mediana anual | Épsilon cuadrado y tau de Kendall |
 
+Supuestos y robustez de la secundaria 2: Shapiro-Wilk por periodo (justifica la prueba no
+paramétrica), Brown-Forsythe (dispersión similar, para leer Kruskal-Wallis como diferencia de
+medianas), post hoc de Mann-Whitney con corrección de Holm y delta de Cliff, Mann-Kendall
+modificado de Hamed-Rao (autocorrelación de la serie anual) y regresión lineal del MATTR sobre
+el año con control por colaboración y longitud de la letra.
+
 ## Definición de "intérprete mujer"
 interprete_mujer = 1 si al menos una mujer está acreditada como intérprete (principal o
 invitada) en la lista de Billboard; 0 si solo hay hombres.
@@ -67,4 +73,4 @@ Se evaluó como alternativa una pregunta sobre agencia femenina según el géner
 intérprete (2015–2025). Se descartó por dos riesgos estadísticos: pocas canciones con
 intérprete mujer en los primeros años (estratos pequeños) y menor probabilidad de que la
 categoría de agencia alcanzara un kappa aceptable. La agencia femenina (C3) se sigue
-codificando como variable descriptiva.
+codificando como variable descriptiva.

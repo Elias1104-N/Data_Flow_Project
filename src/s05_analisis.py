@@ -20,6 +20,14 @@ from src.config import DATA, RES, PERIODOS
 NOMBRES = {"C1": "contenido sexual explícito", "C2": "cuerpo como atributo principal",
            "C3": "agencia femenina", "C4": "violencia"}
 pruebas = []   # cada prueba se agrega aquí con su tamaño de efecto
+FUENTE = ("Marco: canciones de reggaetón n.º 1 en Hot Latin Songs o Latin Airplay "
+          "(Billboard, vía Wikipedia), 2010–2025.")
+
+
+def delta_cliff(a, b):
+    """Delta de Cliff: P(b > a) − P(b < a). Tamaño de efecto para Mann-Whitney."""
+    a, b = np.asarray(a), np.asarray(b)
+    return float(((b[:, None] > a).sum() - (b[:, None] < a).sum()) / (len(a) * len(b)))
 
 
 def anotar(pregunta, prueba, estadistico, p, efecto, valor_efecto, ic=None, nota=""):
@@ -72,8 +80,7 @@ def caja(grupos, ylabel, titulo, archivo, n_total):
     ax.set_ylabel(ylabel)
     ax.set_title(titulo)
     ax.spines[["top", "right"]].set_visible(False)
-    fig.text(0.01, -0.02, f"n = {n_total} canciones. Fuente: listas de fin de año de Billboard "
-             "Hot Latin Songs (vía Wikipedia), 2010–2025.", fontsize=8)
+    fig.text(0.01, -0.02, f"n = {n_total} canciones. {FUENTE}", fontsize=8)
     fig.savefig(RES / archivo, dpi=200, bbox_inches="tight")
     plt.close(fig)
 
@@ -127,8 +134,7 @@ def grafico(d, c, n_total):
     ax.set_ylim(0, 100)
     ax.set_title(f"[Escriban el hallazgo] — {NOMBRES[c]}")
     ax.spines[["top", "right"]].set_visible(False)
-    fig.text(0.01, -0.02, f"n = {n_total} canciones. Fuente: Billboard Hot Latin Songs, "
-             "listas de fin de año 2010–2025. Barras: IC 95 % de Wilson.", fontsize=8)
+    fig.text(0.01, -0.02, f"n = {n_total} canciones. {FUENTE} Barras: IC 95 % de Wilson.", fontsize=8)
     fig.savefig(RES / f"fig_tendencia_{c}.png", dpi=200, bbox_inches="tight")
     plt.close(fig)
 
@@ -169,6 +175,15 @@ def main():
 
     # --- Secundaria 2: riqueza léxica (MATTR) por periodo --------------------
     grupos = {k: g.mattr.values for k, g in base.groupby("periodo", observed=True)}
+    # Supuestos: normalidad por periodo (justifica la prueba no paramétrica) y dispersión similar
+    # (si las dispersiones son parecidas, Kruskal-Wallis se lee como diferencia de medianas)
+    for k, x in grupos.items():
+        w, p_sw = stats.shapiro(x)
+        anotar("MATTR: supuesto de normalidad", f"Shapiro-Wilk {k}", w, p_sw, "", np.nan,
+               nota="p < 0,05 indica que no es normal")
+    bf, p_bf = stats.levene(*grupos.values(), center="median")
+    anotar("MATTR: supuesto de dispersión", "Brown-Forsythe", bf, p_bf, "", np.nan,
+           nota="p > 0,05: dispersiones similares entre periodos")
     H, p = stats.kruskal(*grupos.values())
     anotar("MATTR por periodo", "Kruskal-Wallis", H, p, "épsilon cuadrado", H / (len(base) - 1))
     if p < 0.05:
@@ -176,10 +191,22 @@ def main():
         ps = [stats.mannwhitneyu(grupos[a], grupos[b]).pvalue for a, b in pares]
         for (a, b), p_holm in zip(pares, multipletests(ps, method="holm")[1]):
             anotar("MATTR por periodo (post hoc)", f"Mann-Whitney {a} vs {b}", np.nan, p_holm,
-                   "", np.nan, nota="p corregido por Holm")
-    mkr = mk.original_test(base.groupby("anio").mattr.median().values)
+                   "delta de Cliff", delta_cliff(grupos[a], grupos[b]), nota="p corregido por Holm")
+    medianas = base.groupby("anio").mattr.median()
+    mkr = mk.original_test(medianas.values)
+    ac1 = pd.Series(medianas.values).autocorr(1)
     anotar("MATTR en el tiempo", "Mann-Kendall (mediana anual)", mkr.z, mkr.p,
-           "tau de Kendall", mkr.Tau, nota=f"pendiente de Sen = {mkr.slope:.5f} por año")
+           "tau de Kendall", mkr.Tau, nota=f"pendiente de Sen = {mkr.slope:.5f} por año; "
+           f"autocorrelación de orden 1 = {ac1:.2f}")
+    hr = mk.hamed_rao_modification_test(medianas.values)
+    anotar("MATTR en el tiempo (robustez)", "Mann-Kendall modificado (Hamed-Rao)", hr.z, hr.p,
+           "tau de Kendall", hr.Tau, nota="corrige la autocorrelación de la serie anual")
+    # Robustez: ¿la tendencia se explica por más colaboraciones o por letras más largas?
+    m = smf.ols("mattr ~ anio_c + colaboracion + np.log(n_palabras)", data=base).fit(cov_type="HC3")
+    anotar("MATTR en el tiempo (robustez)", "Regresión lineal con controles (EE robustos HC3)",
+           m.tvalues["anio_c"], m.pvalues["anio_c"], "cambio de MATTR por año",
+           m.params["anio_c"], m.conf_int().loc["anio_c"].values,
+           f"controla colaboración y log(n.º de palabras); R² = {m.rsquared:.3f}")
     resumen_num(base, "mattr").to_csv(RES / "descriptivos_mattr.csv")
     caja(grupos, "MATTR (ventana de 50 palabras)",
          "La riqueza léxica sube en el periodo 2022–25", "fig_mattr_periodo.png", len(base))
@@ -194,8 +221,9 @@ def main():
         H, p = stats.kruskal(*g.values())
         anotar(f"Complementario: {nombre} por periodo", "Kruskal-Wallis", H, p,
                "épsilon cuadrado", H / (len(base) - 1), nota="menciones por 1000 palabras; exploratorio")
-        mkr = mk.original_test(base.groupby("anio")[var].median().values)
-        anotar(f"Complementario: {nombre} en el tiempo", "Mann-Kendall (mediana anual)", mkr.z, mkr.p,
+        # media anual: la mediana es 0 en casi todos los años y no sirve para ver tendencia
+        mkr = mk.original_test(base.groupby("anio")[var].mean().values)
+        anotar(f"Complementario: {nombre} en el tiempo", "Mann-Kendall (media anual)", mkr.z, mkr.p,
                "tau de Kendall", mkr.Tau, nota=f"pendiente de Sen = {mkr.slope:.4f} por año; exploratorio")
         r = resumen_num(base, var)
         r["%_con_alguna_mencion"] = (base.groupby("periodo", observed=True)[f"lex_{dim}"]

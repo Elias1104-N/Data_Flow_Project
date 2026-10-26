@@ -1,0 +1,4 @@
+Carpeta SOLO LOCAL.
+Aqui van las letras como C001.txt, C002.txt, etc. (UTF-8).
+Nunca se suben al repositorio ni se entregan: estan protegidas por derechos de autor.
+El .gitignore excluye todo menos este archivo.

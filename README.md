@@ -1,7 +1,8 @@
 # Data Flow — Proyecto 3
 
-Análisis estadístico de letras de reggaetón exitosas (Billboard Hot Latin Songs,
-listas de fin de año 2010–2025) con validación de Claude como instrumento de medición.
+Análisis estadístico de letras de reggaetón exitosas (canciones que llegaron al n.º 1 de
+Hot Latin Songs o Latin Airplay de Billboard, 2010–2025) con validación de Claude como
+instrumento de medición.
 
 **Pregunta principal:** ¿ha cambiado entre 2010 y 2025 la proporción de canciones de
 reggaetón exitosas con contenido sexual explícito?
@@ -35,7 +36,9 @@ reggaetón exitosas con contenido sexual explícito?
    y pongan como *Working directory* la carpeta `Data_Flow_Project`.
 6. Los CSV se abren directo en PyCharm como tabla, pero para **llenarlos** (marco,
    anotaciones, codificación) es más cómodo Excel o LibreOffice. Al guardar, elijan
-   **CSV UTF-8 (delimitado por comas)**: si Excel lo guarda con punto y coma, el script falla.
+   **CSV UTF-8**. Los scripts leen tanto comas como punto y coma (`leer_csv` en `config.py`),
+   pero **no abran en Excel** los CSV que genera el código (`marco_muestral.csv`, `muestra.csv`):
+   Excel puede cambiarles el formato al guardar.
 
 ## Cómo correrlo desde la terminal
 
@@ -102,5 +105,24 @@ texto largo.
 
 ## Fuentes
 
-- Billboard, Hot Latin Songs, listas de fin de año 2010–2025 (fecha de consulta en `marco_muestral.csv`).
-- Letras: [sitio], consultadas manualmente (fecha por canción en `muestra.csv`).
+- Marco: listas anuales de Wikipedia de las canciones n.º 1 de Hot Latin Songs y Latin Airplay
+  de Billboard, 2010–2025 (URL y fecha de consulta por año en `data/listas_por_anio.csv`).
+  La lista de fin de año de Billboard se descartó porque requiere suscripción.
+- Género de cada canción: página de Wikipedia de la canción (criterio en `docs/pregunta.md`).
+- Letras: Letras.com, consultadas y copiadas a mano (URL y fecha por canción en
+  `data/registro_letras.csv`). Las letras nunca salen de la carpeta local `letras/`.
+
+## Resultados principales
+
+- **Validación:** ninguna categoría alcanzó la regla fijada antes de ver los datos (κ ≥ 0,61 y
+  límite inferior del IC ≥ 0,40). Por eso la pregunta principal (C1) y la secundaria 1 (C2) no
+  se responden con inferencia. Ver `resultados/tabla_kappas.csv` y `resultados/discrepancias.csv`.
+- **Riqueza léxica (secundaria 2):** el MATTR sube con el tiempo (Kruskal-Wallis, ε² = 0,16;
+  Mann-Kendall τ = 0,78, pendiente de Sen ≈ +0,0076 por año). El cambio se concentra en 2022–25.
+
+## Reproducir desde cero (sesión limpia)
+
+Un clon limpio del repositorio corre completo con `python main.py`, sin letras: el paso de
+medidas de texto detecta que `letras/` está vacía y usa la `data/base_texto.csv` versionada.
+La muestra no se vuelve a sortear porque `data/muestra.csv` existe; si se borra, el sorteo con
+la semilla 2026 reproduce exactamente la misma muestra y la misma submuestra de validación.

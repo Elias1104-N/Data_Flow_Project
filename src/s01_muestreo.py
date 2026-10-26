@@ -25,28 +25,45 @@ def clave(texto):
     return " ".join(t.split())
 
 
+def tabla_muestreo(marco, muestra):
+    """Tabla de muestreo (N_h, n_h, fracción y peso W_h = N_h / N) en resultados/."""
+    N_h = marco.periodo.value_counts().reindex(PERIODOS)
+    n_h = muestra.periodo.value_counts().reindex(PERIODOS)
+    tabla = pd.DataFrame({"N_h": N_h, "n_h": n_h, "fraccion_%": (100 * n_h / N_h).round(1),
+                          "peso_W_h": (N_h / N_h.sum()).round(4)})
+    tabla.loc["Total"] = [N_h.sum(), n_h.sum(), round(100 * n_h.sum() / N_h.sum(), 1), 1.0]
+    tabla.to_csv(RES / "tabla_muestreo.csv")
+    return tabla
+
+
+def preparar_marco(marco):
+    """Solo reggaetón; cada canción una sola vez (la primera aparición); periodo."""
+    marco = marco[marco.es_reggaeton == 1].copy()
+    marco["_clave"] = marco.titulo.map(clave) + " | " + marco.artista.map(clave)
+    marco = (marco.sort_values(["anio", "posicion"])
+                  .drop_duplicates("_clave", keep="first"))
+    marco["periodo"] = pd.cut(marco.anio, bins=CORTES, labels=PERIODOS)
+    return marco.dropna(subset=["periodo"])
+
+
 def main():
+    ruta = DATA / "marco_muestral.csv"
     if (DATA / "muestra.csv").exists():
         print("muestra.csv ya existe: no se vuelve a sortear (para no borrar lo que ya llenaron).")
         print("Si de verdad quieren volver a sortear, borren data/muestra.csv y corran de nuevo.")
+        print(tabla_muestreo(preparar_marco(pd.read_csv(ruta)), pd.read_csv(DATA / "muestra.csv")))
         return True
-    ruta = DATA / "marco_muestral.csv"
     marco = pd.read_csv(ruta)
     faltan = set(COLUMNAS_MARCO) - set(marco.columns)
     if faltan:
         print(f"Faltan columnas en {ruta.name}: {sorted(faltan)}")
         return False
     if marco.empty:
-        print(f"{ruta.name} está vacío: llénenlo con las listas de fin de año (paso 2.1 de la guía).")
+        print(f"{ruta.name} está vacío: llénenlo con las canciones n.º 1 de Billboard (ver docs/pregunta.md).")
         return False
 
     # 1. Solo reggaetón; cada canción una sola vez (la primera aparición)
-    marco = marco[marco.es_reggaeton == 1].copy()
-    marco["_clave"] = marco.titulo.map(clave) + " | " + marco.artista.map(clave)
-    marco = (marco.sort_values(["anio", "posicion"])
-                  .drop_duplicates("_clave", keep="first"))
-    marco["periodo"] = pd.cut(marco.anio, bins=CORTES, labels=PERIODOS)
-    marco = marco.dropna(subset=["periodo"])
+    marco = preparar_marco(marco)
 
     # 2. Muestreo estratificado con asignación igual
     partes = []
@@ -61,13 +78,7 @@ def main():
     muestra.to_csv(DATA / "muestra.csv", index=False)
 
     # 3. Tabla de muestreo para el Avance 1
-    N_h = marco.periodo.value_counts().reindex(PERIODOS)
-    n_h = muestra.periodo.value_counts().reindex(PERIODOS)
-    tabla = pd.DataFrame({"N_h": N_h, "n_h": n_h, "fraccion_%": (100 * n_h / N_h).round(1),
-                          "peso_W_h": (N_h / N_h.sum()).round(4)})
-    tabla.loc["Total"] = [N_h.sum(), n_h.sum(), round(100 * n_h.sum() / N_h.sum(), 1), 1.0]
-    tabla.to_csv(RES / "tabla_muestreo.csv")
-    print(tabla)
+    print(tabla_muestreo(marco, muestra))
 
     # 4. Submuestra de validación (aleatoria, misma semilla) + plantillas de anotación
     val = muestra.sample(n=min(N_VALIDACION, len(muestra)), random_state=SEMILLA)[["id"]]
