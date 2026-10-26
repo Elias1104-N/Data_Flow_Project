@@ -24,3 +24,5 @@ data/piloto_h*.csv
 
 # Herramienta local para renombrar letras (no se sube)
 src/renombrar_letras.py
+
+!resultados/discrepancias.csv

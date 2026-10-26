@@ -1,161 +1,161 @@
-id,es_validacion,llm_C1,llm_C2,llm_C3,llm_C4,llm_justificacion,modelo,fecha
-C001,0,,,,,,,
-C002,0,,,,,,,
-C003,0,,,,,,,
-C004,0,,,,,,,
-C005,0,,,,,,,
-C007,0,,,,,,,
-C008,0,,,,,,,
-C009,0,,,,,,,
-C010,0,,,,,,,
-C011,0,,,,,,,
-C012,0,,,,,,,
-C013,0,,,,,,,
-C014,0,,,,,,,
-C015,0,,,,,,,
-C017,0,,,,,,,
-C018,0,,,,,,,
-C020,0,,,,,,,
-C021,0,,,,,,,
-C022,0,,,,,,,
-C023,0,,,,,,,
-C024,0,,,,,,,
-C026,0,,,,,,,
-C027,0,,,,,,,
-C028,0,,,,,,,
-C029,0,,,,,,,
-C030,0,,,,,,,
-C033,0,,,,,,,
-C034,0,,,,,,,
-C035,0,,,,,,,
-C036,0,,,,,,,
-C037,0,,,,,,,
-C038,0,,,,,,,
-C039,0,,,,,,,
-C040,0,,,,,,,
-C041,0,,,,,,,
-C044,0,,,,,,,
-C048,0,,,,,,,
-C049,0,,,,,,,
-C050,0,,,,,,,
-C052,0,,,,,,,
-C054,0,,,,,,,
-C055,0,,,,,,,
-C056,0,,,,,,,
-C059,0,,,,,,,
-C061,0,,,,,,,
-C062,0,,,,,,,
-C064,0,,,,,,,
-C065,0,,,,,,,
-C067,0,,,,,,,
-C068,0,,,,,,,
-C069,0,,,,,,,
-C070,0,,,,,,,
-C071,0,,,,,,,
-C074,0,,,,,,,
-C076,0,,,,,,,
-C078,0,,,,,,,
-C079,0,,,,,,,
-C080,0,,,,,,,
-C081,0,,,,,,,
-C083,0,,,,,,,
-C085,0,,,,,,,
-C086,0,,,,,,,
-C089,0,,,,,,,
-C092,0,,,,,,,
-C094,0,,,,,,,
-C095,0,,,,,,,
-C096,0,,,,,,,
-C097,0,,,,,,,
-C098,0,,,,,,,
-C099,0,,,,,,,
-C100,0,,,,,,,
-C101,0,,,,,,,
-C102,0,,,,,,,
-C104,0,,,,,,,
-C106,0,,,,,,,
-C109,0,,,,,,,
-C110,0,,,,,,,
-C112,0,,,,,,,
-C113,0,,,,,,,
-C114,0,,,,,,,
-C117,0,,,,,,,
-C119,0,,,,,,,
-C121,0,,,,,,,
-C122,0,,,,,,,
-C124,0,,,,,,,
-C125,0,,,,,,,
-C126,0,,,,,,,
-C129,0,,,,,,,
-C130,0,,,,,,,
-C131,0,,,,,,,
-C132,0,,,,,,,
-C133,0,,,,,,,
-C135,0,,,,,,,
-C136,0,,,,,,,
-C137,0,,,,,,,
-C140,0,,,,,,,
-C141,0,,,,,,,
-C142,0,,,,,,,
-C143,0,,,,,,,
-C145,0,,,,,,,
-C146,0,,,,,,,
-C147,0,,,,,,,
-C148,0,,,,,,,
-C150,0,,,,,,,
-C151,0,,,,,,,
-C154,0,,,,,,,
-C155,0,,,,,,,
-C156,0,,,,,,,
-C157,0,,,,,,,
-C159,0,,,,,,,
-C006,1,,,,,,,
-C016,1,,,,,,,
-C019,1,,,,,,,
-C025,1,,,,,,,
-C031,1,,,,,,,
-C032,1,,,,,,,
-C042,1,,,,,,,
-C043,1,,,,,,,
-C045,1,,,,,,,
-C046,1,,,,,,,
-C047,1,,,,,,,
-C051,1,,,,,,,
-C053,1,,,,,,,
-C057,1,,,,,,,
-C058,1,,,,,,,
-C060,1,,,,,,,
-C063,1,,,,,,,
-C066,1,,,,,,,
-C072,1,,,,,,,
-C073,1,,,,,,,
-C075,1,,,,,,,
-C077,1,,,,,,,
-C082,1,,,,,,,
-C084,1,,,,,,,
-C087,1,,,,,,,
-C088,1,,,,,,,
-C090,1,,,,,,,
-C091,1,,,,,,,
-C093,1,,,,,,,
-C103,1,,,,,,,
-C105,1,,,,,,,
-C107,1,,,,,,,
-C108,1,,,,,,,
-C111,1,,,,,,,
-C115,1,,,,,,,
-C116,1,,,,,,,
-C118,1,,,,,,,
-C120,1,,,,,,,
-C123,1,,,,,,,
-C127,1,,,,,,,
-C128,1,,,,,,,
-C134,1,,,,,,,
-C138,1,,,,,,,
-C139,1,,,,,,,
-C144,1,,,,,,,
-C149,1,,,,,,,
-C152,1,,,,,,,
-C153,1,,,,,,,
-C158,1,,,,,,,
-C160,1,,,,,,,
+﻿id;es_validacion;llm_C1;llm_C2;llm_C3;llm_C4;llm_justificacion;modelo;fecha
+C001;0;0;0;0;0;"Ninguna categoría en 1: canción de baile y fiesta; cintura y cadera aluden al movimiento al bailar, sin acto sexual, agencia ni violencia";Opus 5.5 Medio;21-oct
+C002;0;0;0;0;0;"Ninguna categoría marcada: canción de fiesta y baile; las caderas aluden al movimiento al bailar, sin acto sexual, agencia femenina ni violencia literal";Opus 5.5 Medio;21-oct
+C003;0;1;1;0;0;C1: alude a desnudez y a que ella le hace el amor. C2: elogia su figura voluptuosa, «ese cuerpo exagera’o;Opus 5.5 Medio;21-oct
+C004;0;0;1;0;0;C2: elogia sus caderas al bailar y su cabellera. Roces y toqueteos ocurren en contexto de baile, sin acto sexual inequívoco;Opus 5.5 Medio;21-oct
+C005;0;0;0;0;0;"Ninguna categoría marcada: solo baile sin acto sexual; caderas y cintura aluden a movimientos de baile, no elogio corporal; sin voz femenina ni violencia literal";Opus 5.5 Medio;21-oct
+C007;0;1;1;0;0;C1: varias alusiones convergentes a encuentro sexual nocturno y a escondidas. C2: nombra cintura y boca de ella como objeto de deseo;Opus 5.5 Medio;21-oct
+C008;0;1;0;0;0;C1: varios dobles sentidos acumulados (darte duro, bate que bate, chupete, temblar tras besos) apuntan a un encuentro sexual;Opus 5.5 Medio;21-oct
+C009;0;1;0;0;0;C1: varios dobles sentidos convergen en un encuentro sexual (quitarle la ropa, montarse encima, llevarla a la cama). Sin partes corporales elogiadas claramente.;Opus 5.5 Medio;21-oct
+C010;0;0;0;0;0;"Ninguna categoría marcada. Canción de desamor y nostalgia; besos y caricias sin acto sexual; menciones de muerte son metafóricas; ella no tiene voz";Opus 5.5 Medio;21-oct
+C011;0;0;0;0;0;"Ninguna categoría marcada. Predominan baile, caricias y deseo; los posibles dobles sentidos resultan ambiguos. No hay elogio corporal, voz femenina decisoria ni violencia.";Opus 5.5 Medio;21-oct
+C012;0;0;0;1;0;"C3: una voz femenina en primera persona expresa su propio deseo y sus dudas. Baile y besos no constituyen acto sexual; los labios aluden al beso.";Opus 5.5 Medio;21-oct
+C013;0;0;0;1;0;C3: describe a la mujer con gustos propios (salir, bailar, que la miren) presentados como suyos. Solo hay baile y deseo, sin acto sexual;Opus 5.5 Medio;21-oct
+C014;0;0;0;0;0;"Ninguna categoría: predominan baile, deseo y un beso; el cuerpo se nombra genéricamente; ella es objeto de la mirada del narrador";Opus 5.5 Medio;21-oct
+C015;0;0;1;1;0;C2: elogia su pelo y boca como deseo. C3: voz femenina en primera persona toma el control del baile y lo dirige;Opus 5.5 Medio;21-oct
+C017;0;1;0;0;0;C1: varios dobles sentidos acumulados (invitarla a casa, la medicina, perderse en el placer) apuntan a un encuentro sexual.;Opus 5.5 Medio;21-oct
+C018;0;0;0;0;0;"Ninguna categoría marcada: fiesta y perreo sin acto sexual inequívoco; elogio corporal genérico; deseo femenino solo proyectado; ‘me mata’ es metáfora";Opus 5.5 Medio;21-oct
+C020;0;1;0;1;0;C1: recuerda relaciones sexuales filmadas y alude a hacer el amor. C3: ella lo dejó, eligió su camino y responde rechazándolo.;Opus 5.5 Medio;21-oct
+C021;0;1;0;0;0;C1: varios dobles sentidos convergentes (acercarse al pantalón, pegarse como animales) y deseo explícito de hacerle el amor configuran lectura sexual dominante;Opus 5.5 Medio;21-oct
+C022;0;0;1;0;0;C2: nombra su boca y su anatomía como motivo de deseo. C1=0: el baile y la 'noche loca' no describen inequívocamente un acto sexual;Opus 5.5 Medio;21-oct
+C023;0;1;0;0;0;C1: velas, champán, olvidar la amistad y querer ver más allá de su ropa interior proponen en conjunto un encuentro sexual.;Opus 5.5 Medio;21-oct
+C024;0;1;0;0;0;"C1: varias expresiones (amante, ‘te caliento más’, ‘nadie lo hace como yo’, extrañar su piel) apuntan a relación sexual; resto ausente";Opus 5.5 Medio;21-oct
+C026;0;1;0;0;0;C1: invitación explícita (“hagamos el amor”), deseo de hacerla suya y tocarse hasta el amanecer. Sin partes corporales específicas, voz femenina ni violencia.;Opus 5.5 Medio;21-oct
+C027;0;1;1;0;0;C1: calentura, ir por detrás y lo que pedirá esta noche apuntan a encuentro sexual. C2: elogia trasero, silueta y figura comparada con celebridad.;Opus 5.5 Medio;21-oct
+C028;0;0;0;0;0;"Ninguna categoría marcada: único doble sentido aislado que la canción resuelve en besos; baile, despecho y deseo proyectado por el narrador, sin voz femenina.";Opus 5.5 Medio;21-oct
+C029;0;1;0;0;0;C1: varias expresiones combinadas (pide quitarse la ropa, sentir su cuerpo, estar solos, amanecer juntos) describen un encuentro sexual propuesto;Opus 5.5 Medio;21-oct
+C030;0;0;0;0;0;"Ninguna categoría en 1: desamor y alcohol; ‘darte calor’ es doble sentido aislado; ruptura sin voz ni decisión femenina explícita; muerte metafórica";Opus 5.5 Medio;21-oct
+C033;0;0;0;0;0;Ninguna categoría marcada: canción romántica sin acto sexual inequívoco, sin elogio de partes corporales, sin voz o decisión femenina, y violencia solo metafórica.;Opus 5.5 Medio;21-oct
+C034;0;0;1;0;0;C2: alude al trasero de ella (chapas, la parte de atrás) como objeto de deseo. Las insinuaciones sexuales son ambiguas y predomina el perreo.;Opus 5.5 Medio;21-oct
+C035;0;1;0;0;0;C1: varias alusiones convergentes (lugar escondido a solas, despertar en su cama, sin hablar de amor) proponen un encuentro sexual;Opus 5.5 Medio;21-oct
+C036;0;1;0;1;0;C1: varias expresiones (irse juntos, noche de placer, hasta el amanecer) proponen un encuentro sexual. C3: ella rechaza sus avances con voz propia;Opus 5.5 Medio;21-oct
+C037;0;0;0;0;0;"Ninguna categoría marcada: despertar juntos sin recordar nada no describe un acto sexual; no hay partes del cuerpo, voz femenina ni violencia literal";Opus 5.5 Medio;21-oct
+C038;0;1;0;1;0;C1: varias alusiones convergentes a encuentro sexual (desnudarla, calmar su deseo). C3: ella toma iniciativa, pide lo que quiere y escapa por decisión propia;Opus 5.5 Medio;21-oct
+C039;0;1;0;0;0;C1: narra un encuentro sexual pasado (se desvisten, hicieron el amor, intimidad) y propone repetirlo. No nombra partes del cuerpo, no hay violencia;Opus 5.5 Medio;21-oct
+C040;0;0;0;1;0;C3: una mujer habla en primera persona, describe el hombre que quiere y decide esquivarlo. Hay deseo y alusiones aisladas, sin acto sexual inequívoco.;Opus 5.5 Medio;21-oct
+C041;0;1;0;0;0;propone explícitamente hacer el amor y menciona el sexo con ella. Sin partes del cuerpo, sin voz propia femenina, sin violencia.;Opus 5.5 Medio;21-oct
+C044;0;0;1;1;0;C2: él la desea por su cadera. C3: ella decide en primera persona y se declara independiente, de nadie. Insinuaciones sexuales insuficientes para C1.;Opus 5.5 Medio;21-oct
+C048;0;0;0;1;0;C3: ella habla en primera persona, va de fiesta con sus amigas y expresa lo que le gusta. Alusiones sexuales ambiguas dentro del baile;Opus 5.5 Medio;21-oct
+C049;0;1;1;1;0;C1: dobles sentidos acumulados (lo hacemos otro rato, felices los 4). C2: elogio de su figura (cuerpo de sirena). C3: ella decide con quién se va.;Opus 5.5 Medio;21-oct
+C050;0;1;1;0;0;C1: alude explícitamente a volver a «hacer el amor» y a encuentros iniciados. C2: elogia el movimiento de sus caderas como motivo de deseo;Opus 5.5 Medio;21-oct
+C052;0;0;0;0;0;Ninguna categoría marcada: la letra celebra la unidad latinoamericana y la fiesta, sin actos sexuales, partes del cuerpo, agencia femenina ni violencia;Opus 5.5 Medio;21-oct
+C054;0;0;0;0;0;"Ninguna categoría marcada: reencuentro nostálgico con besos, seducción y baile; alusiones vagas sin acto sexual inequívoco, sin partes del cuerpo, agencia clara ni violencia.";Opus 5.5 Medio;21-oct
+C055;0;1;1;0;0;C1: varios dobles sentidos acumulados en el verso (sustancia, ráfagas, explotar, pargo) apuntan a un acto sexual. C2: elogia curvas, cintura, nalgas y booty;Opus 5.5 Medio;21-oct
+C056;0;1;1;1;0;C1: varios dobles sentidos y desnudez describen encuentro sexual. C2: desea sus labios y elogia sus ojos. C3: ella pide que la busque, no se enamora;Opus 5.5 Medio;21-oct
+C059;0;0;0;1;0;"C3: ella decide rechazar el amor y no volver a enamorarse para protegerse; la letra presenta esa decisión como suya.";Opus 5.5 Medio;21-oct
+C061;0;0;1;0;0;"C2: elogia el trasero de ella y su figura trabajada con pilates. Las alusiones a irse a casa son ambiguas; predomina la fiesta";Opus 5.5 Medio;21-oct
+C062;0;1;1;0;0;C1: varios dobles sentidos juntos (frente al espejo, ‘lo hace sin temor’, amigos sin relación) apuntan a sexo. C2: elogia sus ojos;Opus 5.5 Medio;21-oct
+C064;0;1;0;0;0;C1: el narrador propone desvestirla y pasar la noche con ella, lo que se lee como una propuesta de encuentro sexual;Opus 5.5 Medio;21-oct
+C065;0;1;1;1;0;C1: alude a relaciones sexuales pasadas y pide otra noche. C2: desea sus labios. C3: ella lo usa por decisión propia;Opus 5.5 Medio;21-oct
+C067;0;1;1;1;0;C1: varios dobles sentidos de infidelidad sexual acumulados. C2: elogia trasero. C3: ella anda sola, no se enamora, decide negar conocerlo;Opus 5.5 Medio;21-oct
+C068;0;1;1;0;0;C1: menciona explícitamente tener sexo con ella. C2: nombra sus caderas como objeto de deseo al tocarla;Opus 5.5 Medio;21-oct
+C069;0;0;1;1;0;C2: elogia su figura mejorada por gimnasio, mencionando supuesta cirugía. C3: ella decide salir, rechaza novio y es independiente tras infidelidad;Opus 5.5 Medio;21-oct
+C070;0;1;1;1;0;C1: noche de sexo, gemidos y encuentro recordado. C2: elogio de su figura física. C3: ella termina relaciones y decide sola;Opus 5.5 Medio;21-oct
+C071;0;0;1;0;0;C2: la letra destaca la cintura de ella como motivo de admiración. Escena romántica de playa sin acto sexual, agencia femenina clara ni violencia.;Opus 5.5 Medio;22-oct
+C074;0;0;0;1;0;"C3: ella habla en primera persona, rechaza a quien antes la rechazó, perrea sola y decide cuándo llamar; soltera e independiente por elección propia.";Opus 5.5 Medio;22-oct
+C076;0;0;0;0;0;"Ninguna categoría marcada: fiesta, baile y alcohol; una alusión aislada a la cama sin refuerzo; sin partes del cuerpo, voz femenina ni violencia literal.";Opus 5.5 Medio;22-oct
+C078;0;1;0;1;0;C1: varios dobles sentidos (bellaquear, hotel, comerse) apuntan a encuentro sexual. C3: ella decide, paga sus cuentas y propone. Booty propio excluido.;Opus 5.5 Medio;22-oct
+C079;0;1;0;0;0;C1: varios dobles sentidos acumulados (comérsela, encenderla y apagarla, dárselo) apuntan a un acto sexual. ‘Asalto’ es lenguaje de fiesta, no violencia.;Opus 5.5 Medio;22-oct
+C080;0;1;1;0;0;C1: varios dobles sentidos sexuales convergentes (comérsela, la cama, tatuaje oculto). C2: elogia sus ojos, carita, sonrisa y boca como objeto de deseo.;Opus 5.5 Medio;22-oct
+C081;0;0;1;0;0;C2: elogia y desea partes específicas: ojos, pelo y cara. C1=0: predomina deseo y enamoramiento sin acto sexual inequívoco.;Opus 5.5 Medio;22-oct
+C083;0;1;1;1;0;C1: dobles sentidos acumulados (terminar contigo, caliente, alante/detrás). C2: elogio explícito de su trasero. C3: ella pide tragos y toma la iniciativa con su señal.;Opus 5.5 Medio;22-oct
+C085;0;0;0;0;0;"Ninguna categoría marcada: es nostalgia romántica sin acto sexual inequívoco; cuello y pelo aparecen como ternura, no como atributo; ‘morir’ es metafórico.";Opus 5.5 Medio;22-oct
+C086;0;0;1;1;0;C2: presenta la cirugía estética de ella como atributo. C3: ella decide no tener novio, bloquea, sale y perrea por elección propia.;Opus 5.5 Medio;22-oct
+C089;0;1;1;1;0;C1: varias alusiones sexuales directas (romper la cama, humedad, penetración). C2: elogia su trasero y abdomen. C3: ella decide qué hace, sin depender de hombres.;Opus 5.5 Medio;22-oct
+C092;0;1;0;0;0;"C1: invitación nocturna a su cama para ‘matar estas ganas’ y deseo mutuo acumulado. Sin partes corporales femeninas; deseo de ella es proyección del narrador.";Opus 5.5 Medio;22-oct
+C094;0;1;1;1;0;"C1: describe relaciones sexuales pasadas y actuales. C2: alude a una mujer por su trasero. C3: la amiga lo busca por iniciativa propia; la ex decidió irse.";Opus 5.5 Medio;22-oct
+C095;0;1;0;0;0;C1: varias expresiones acumuladas (volver a hacerlo apasionadamente, hacerla suya, calentarse juntos, irse a fuego) apuntan a un encuentro sexual.;Opus 5.5 Medio;22-oct
+C096;0;1;1;1;0;C1: sexo propuesto y recordado (hacer el amor, desnudez, adulterio). C2: elogia su figura. C3: ella se declara libre y elige con quién.;Opus 5.5 Medio;22-oct
+C097;0;1;1;0;0;C1: varios dobles sentidos juntos (garaje, veneno, homenaje al cuerpo) sugieren acto sexual. C2: elogia trasero, nalgas y cirugía (plástico).;Opus 5.5 Medio;22-oct
+C098;0;1;0;1;0;C1: varias alusiones (cama, amantes con privilegios, repetir, quitarse ropa interior) describen encuentros sexuales. C3: mujer en primera persona expresa deseos y controla la relación.;Opus 5.5 Medio;22-oct
+C099;0;1;0;1;0;C1: propuesta explícita de relaciones y dobles sentidos convergentes. C3: narradora femenina expresa en primera persona su propio deseo y aceptación.;Opus 5.5 Medio;22-oct
+C100;0;1;1;1;0;C1: invitaciones y dobles sentidos sexuales acumulados. C2: deseo por su boca y curvas. C3: ella rechaza pretendientes y decide. Cuchilla es metáfora sexual.;Opus 5.5 Medio;22-oct
+C101;0;1;0;1;0;C1: encuentros sexuales descritos (desnudez, tocamientos, referencia porno). C3: ella decide cuándo aparecer, toma iniciativa, rechaza pretendientes y se cansó de relaciones.;Opus 5.5 Medio;22-oct
+C102;0;0;0;1;0;C3: una mujer en primera persona elige, conquista y pone límites (“conmigo no te pases de listo”). Los dobles sentidos quedan dentro del baile.;Opus 5.5 Medio;22-oct
+C104;0;0;1;0;0;C2: menciona sus labios como objeto de deseo. Los dobles sentidos son ambiguos y predomina el romance y los besos, así que C1 queda en 0.;Opus 5.5 Medio;22-oct
+C106;0;1;0;1;0;C1: propone explícitamente hacerle el amor, más dobles sentidos convergentes. C3: verso femenino en primera persona expresa su propio deseo y condiciones.;Opus 5.5 Medio;22-oct
+C109;0;1;0;1;0;C1: varios dobles sentidos y alusiones directas a sexo en la cama. C3: la voz femenina expresa en primera persona su propio deseo sexual.;Opus 5.5 Medio;22-oct
+C110;0;1;0;0;0;C1: alude inequívocamente a relaciones sexuales pasadas (‘lo hacíamos en ayunas’). Sin partes del cuerpo, decisiones de ella reinterpretadas por el narrador, ‘guerra’ metafórica.;Opus 5.5 Medio;22-oct
+C112;0;0;0;1;0;C3: la narradora habla en primera persona, decide salir y bailar, y afirma lo que siente y lo que no quiere repetir.;Opus 5.5 Medio;22-oct
+C113;0;0;0;0;0;"Ninguna categoría marcada: nostalgia y fiesta; petición de nudes y doble sentido aislados sin acto sexual; disparos solo metafóricos.";Opus 5.5 Medio;22-oct
+C114;0;1;0;1;0;C1: menciona explícitamente haber hecho el amor y noches sin dormir juntos. C3: ella decidió irse y lo cambió por otra opción.;Opus 5.5 Medio;22-oct
+C117;0;0;1;0;1;C2: nombra el trasero de ella como atributo deseado. C4: amenaza al rival y menciona salir con pistola en sentido literal.;Opus 5.5 Medio;22-oct
+C119;0;0;0;0;0;"Ninguna categoría marcada: desamor sin acto sexual ni partes del cuerpo; las acciones de ella aparecen desde la queja del narrador; sin violencia literal.";Opus 5.5 Medio;22-oct
+C121;0;1;0;1;0;C1: varios dobles sentidos y referencias sexuales directas convergen en un encuentro sexual. C3: Natti expresa en primera persona su deseo y lo que quiere.;Opus 5.5 Medio;22-oct
+C122;0;1;1;0;0;C1: varias expresiones (perderse en su cuerpo, última noche, encuentro disfrutado) apuntan a un acto sexual. C2: elogia su carita, cuerpo seductor y figura.;Opus 5.5 Medio;22-oct
+C124;0;1;0;0;0;C1: varias referencias directas a un encuentro sexual (eyaculación, orgasmos de ella, llevarla a casa). Sin partes del cuerpo elogiadas, sin voz femenina, sin violencia literal.;Opus 5.5 Medio;22-oct
+C125;0;1;1;0;0;C1: varios dobles sentidos convergentes (bellaca, membresía, cosas que conoce) sugieren relación sexual. C2: menciona el trasero de ella como objeto de deseo.;Opus 5.5 Medio;22-oct
+C126;0;1;1;0;0;C1: varios dobles sentidos y alusiones (cama, tocarla bajo el agua, hotel, sexing) describen encuentros sexuales. C2: menciona su trasero como objeto de deseo.;Opus 5.5 Medio;22-oct
+C129;0;1;0;1;0;C1: varios dobles sentidos convergen en un encuentro sexual propuesto. C3: ella, en primera persona, dice estar libre y decide buscarlo.;Opus 5.5 Medio;22-oct
+C130;0;0;0;1;0;"C3: ella lo dejó y decide que necesitan darse tiempo, aunque él insista. Solo hay deseo, sin acto sexual; las municiones son metafóricas.";Opus 5.5 Medio;22-oct
+C131;0;1;0;1;0;C1: el verso invitado recuerda encuentros sexuales en un auto. C3: la narradora rechaza las disculpas y decide no volver con él.;Opus 5.5 Medio;22-oct
+C132;0;1;1;1;0;C1: varias alusiones directas a actos sexuales. C2: deseo centrado en sus abdominales. C3: ella decide, anda cazando y no depende del narrador.;Opus 5.5 Medio;22-oct
+C133;0;1;0;1;0;C1: alusiones acumuladas a encuentros sexuales (hotel, comiéndose a otra). C3: mujeres en primera persona rechazan al ex y deciden con quién salir.;Opus 5.5 Medio;22-oct
+C135;0;1;1;0;0;C1: varios dobles sentidos (vela, trineo, puerta, subir) describen un encuentro sexual. C2: elogia su trasero y su boca como objeto de deseo.;Opus 5.5 Medio;22-oct
+C136;0;0;0;1;0;C3: la mujer expresa en primera persona su deseo y reclama atención. Hay deseo insatisfecho, sin acto sexual inequívoco ni partes corporales elogiadas.;Opus 5.5 Medio;22-oct
+C137;0;1;1;1;0;C1: dobles sentidos acumulados (desnudez, de espalda, mojada). C2: elogio reiterado del trasero. C3: voz femenina expresa deseo propio (‘loca por verte’).;Opus 5.5 Medio;22-oct
+C140;0;1;1;0;0;C1: describe relaciones sexuales en la camioneta y penetración. C2: elogia trasero, pechos y nalgas de ella como objeto de deseo.;Opus 5.5 Medio;22-oct
+C141;0;1;1;1;1;C1: varios dobles sentidos convergen en acto sexual. C2: elogia su cintura. C3: ella pide y decide, descrita independiente. C4: menciona pistola literal.;Opus 5.5 Medio;22-oct
+C142;0;1;0;0;0;C1: varios dobles sentidos convergentes (habitación a solas, viaje a la Luna, desnudez, besos íntimos) describen un encuentro sexual propuesto.;Opus 5.5 Medio;22-oct
+C143;0;0;1;1;0;C2: elogia cirugías y nombra trasero y pecho. C3: ella decide operarse por su cuenta y rechaza a sus pretendientes.;Opus 5.5 Medio;22-oct
+C145;0;1;1;0;0;C1: varios dobles sentidos sexuales acumulados (casi lo hicieron, fantasías, hacerle gemelos, afinar su cuerpo). C2: desea sus labios y compara su cuerpo con guitarra.;Opus 5.5 Medio;22-oct
+C146;0;1;1;0;0;C1: dobles sentidos combinados (comerla a escondidas, enredarse en su piel) aluden a sexo. C2: elogia específicamente sus ojos y mirada.;Opus 5.5 Medio;22-oct
+C147;0;1;0;0;0;"C1: describe encuentros sexuales pasados y propuestos de forma explícita (sexo, cama, orgasmo). No nombra partes específicas del cuerpo; la voz femenina no aparece.";Opus 5.5 Medio;22-oct
+C148;0;1;1;1;1;C1: varios dobles sentidos sexuales convergentes. C2: elogio de su cuerpo/figura. C3: ella decide salir y busca pareja. C4: amenaza literal con AK.;Opus 5.5 Medio;22-oct
+C150;0;1;0;0;0;C1: varios dobles sentidos acumulados (montarse, romperla, ponerle, bomba, descubrir lunares) apuntan a un acto sexual. Deseo femenino presentado como proyección del narrador.;Opus 5.5 Medio;22-oct
+C151;0;1;1;1;0;C1: recuerdo sin ropa, motel y propuesta sexual explícita. C2: elogio a su físico y zona íntima. C3: una mujer expresa en primera persona su deseo.;Opus 5.5 Medio;22-oct
+C154;0;1;0;0;0;C1: varias alusiones convergentes (desvestirla mentalmente, ponerse freaky e irse con él, nada a mitad, amanecida) apuntan a un encuentro sexual.;Opus 5.5 Medio;22-oct
+C155;0;0;1;0;0;"C2: elogia y desea su boca y su carita. La lectura dominante es romántica; las alusiones sexuales aisladas aparecen en contexto de baile.";Opus 5.5 Medio;22-oct
+C156;0;0;0;0;0;"Ninguna categoría marcada: canción de gratitud, optimismo y fe; sin sexo, cuerpo femenino, agencia femenina ni violencia literal (‘veneno’ es metafórico).";Opus 5.5 Medio;22-oct
+C157;0;1;1;1;0;C1: varias alusiones a relaciones sexuales, tríos y embarazo. C2: elogia su trasero. C3: ella deja al novio y rechaza compromiso por decisión propia.;Opus 5.5 Medio;22-oct
+C159;0;1;0;0;0;C1: varias alusiones convergentes a un encuentro sexual (hotel, trío, recorrer el cuerpo, dejarla líquida). Sin partes corporales específicas, voz femenina ni violencia literal.;Opus 5.5 Medio;22-oct
+C006;1;0;0;0;0;"Ninguna categoría marcada: predomina el baile; cintura y cadera aluden al movimiento; ‘violento’ es metafórico; ella no expresa decisiones propias";Opus 5.5 Medio;22-oct
+C016;1;0;0;0;0;"Ninguna categoría en 1: predomina baile y desamor; la cintura aparece al bailar; la partida de ella no se presenta como decisión propia";Opus 5.5 Medio;22-oct
+C019;1;0;0;0;0;"Ninguna categoría marcada: letra de fiesta y baile, sin acto sexual, sin partes del cuerpo, sin voz femenina; ‘romper’ es metáfora festiva";Opus 5.5 Medio;22-oct
+C025;1;1;0;0;0;C1: alusiones reiteradas a un acto sexual (hacer el amor, nadie te lo haga como yo, provocación). Sin partes del cuerpo, voz femenina ni violencia;Opus 5.5 Medio;22-oct
+C031;1;1;1;0;0;C1: invitación explícita a la habitación para tener sexo. C2: desea su cintura y labios como objeto de deseo;Opus 5.5 Medio;22-oct
+C032;1;0;0;1;0;C3: el narrador reconoce que ella actuó cuando quiso y con quien quiso, tomando sus propias decisiones sobre la relación;Opus 5.5 Medio;22-oct
+C042;1;1;1;0;0;C1: invitación explícita a tener relaciones y propuesta de desnudarse en el agua. C2: elogia su figura y su cintura (waistline);Opus 5.5 Medio;22-oct
+C043;1;1;0;0;0;C1: varios dobles sentidos convergentes (entregarse, cuerpo estremeciéndose, ‘eras mía’, descubrir secretos corporales) describen un encuentro sexual. Sin partes corporales elogiadas específicamente;Opus 5.5 Medio;22-oct
+C045;1;0;0;1;0;"C3: ella decidió despedirse y casarse con otro, que le parece mejor. ‘Me está matando’ es metáfora; sin acto sexual ni partes del cuerpo";Opus 5.5 Medio;22-oct
+C046;1;1;0;0;0;C1: propone hacer el amor y describe recorrer con besos todo su cuerpo. Boca y pies son trayecto, no elogio corporal;Opus 5.5 Medio;22-oct
+C047;1;1;0;0;0;C1: propone hacerle el amor y recorrer su cuerpo con besos. Boca y pies solo trazan ese recorrido, no son elogio corporal;Opus 5.5 Medio;22-oct
+C051;1;1;0;0;0;"C1: propone desnudarla y tener relaciones en una playa; varios dobles sentidos refuerzan el encuentro sexual. Cuello y pelo aparecen dentro del acto, no como atributo.";Opus 5.5 Medio;22-oct
+C053;1;0;0;0;0;Ninguna categoría marcada: canción romántica sobre celos y reconciliación de pareja, sin acto sexual, partes del cuerpo, voz o decisión femenina, ni violencia literal;Opus 5.5 Medio;22-oct
+C057;1;1;0;1;0;C1: varias alusiones acumuladas a encuentros sexuales (devorarse, trepar encima, cama). C3: ella toma la iniciativa, invita y se escapa desafiando a su padre;Opus 5.5 Medio;22-oct
+C058;1;1;1;0;0;C1: varios dobles sentidos convergentes e invitación a la cama describen un encuentro sexual. C2: elogia el trasero de ella como objeto de deseo.;Opus 5.5 Medio;22-oct
+C060;1;1;0;0;0;C1: varios dobles sentidos acumulados (disposición, sudar, rastrillo, despertar juntos) apuntan a un encuentro sexual. Cara, ojos y boca no son atributo corporal;Opus 5.5 Medio;22-oct
+C063;1;0;0;0;0;"Ninguna categoría marcada: deseo y reconciliación romántica; ‘calmamos las ganas’ es doble sentido aislado; sin partes del cuerpo, sin voz femenina ni violencia literal";Opus 5.5 Medio;22-oct
+C066;1;0;0;0;1;C4: amenaza literal de disparar a quien se entrometa (onomatopeyas de disparo y apretar el gatillo). Sin acto sexual, partes del cuerpo ni agencia femenina clara;Opus 5.5 Medio;22-oct
+C072;1;1;0;1;0;C1: describe encuentros sexuales (quitar ropa, hacer el amor, terraza). C3: ella decide repartirse entre dos hombres, descrita como loba sin dueño.;Opus 5.5 Medio;22-oct
+C073;1;1;0;1;0;C1: anuncia una noche de sexo y roces con el narrador. C3: ella decide, queda soltera y elige salir y perrear tras un maltrato;Opus 5.5 Medio;22-oct
+C075;1;1;0;1;0;C1: alude a relación sexual previa (amigos con derecho) y promete hacerle cosas nuevas. C3: ella decide dejarlo y no ser suya;Opus 5.5 Medio;22-oct
+C077;1;1;0;1;0;C1: varias alusiones (quedarse conmigo, no se acuesta sola) apuntan a encuentro sexual. C3: ella decide engañar a su pareja, lo llama y elige.;Opus 5.5 Medio;22-oct
+C082;1;1;0;1;0;C1: ella ofrece lo que tiene bajo las caderas y alude a su boca, dobles sentidos sexuales. C3: ella elige, decide y expresa deseo propio;Opus 5.5 Medio;22-oct
+C084;1;0;0;0;0;"Propuesta de matrimonio romántica; sin acto sexual, sin partes del cuerpo femenino, sin voz ni decisión de ella, sin violencia.";Opus 5.5 Medio;22-oct
+C087;1;1;0;0;0;"C1: recuerda encuentros sexuales explícitos (polvos sobre la mesa, carro, motel, playa). Disparos y muerte son metafóricos; no nombra partes del cuerpo";Opus 5.5 Medio;22-oct
+C088;1;1;0;1;0;C1: propone ir de la discoteca al motel, reforzado por otros dobles sentidos. C3: Anitta en primera persona se presenta independiente y decidida;Opus 5.5 Medio;22-oct
+C090;1;0;0;1;0;"C3: ella decide dejarlo, salir de fiesta y elegir con quién estar, y habla en primera persona. Alusiones sexuales aisladas; maltrato no especificado como físico";Opus 5.5 Medio;22-oct
+C091;1;1;0;1;0;C1: describe relaciones sexuales y orgasmos compartidos. C3: la voz femenina declara su deseo y decide exclusividad (“yo no comparto”). Muerte solo metafórica;Opus 5.5 Medio;22-oct
+C093;1;1;1;1;0;C1: ella lo lleva al cuarto, alusiones a la cama. C2: menciona sus nalgas. C3: ella elige, invita y toma la iniciativa;Opus 5.5 Medio;22-oct
+C103;1;0;1;0;1;"C2: elogia y desea el trasero de ella (poom-poom). C4: mención literal de apuñalar a alguien; asesina, criminal y fatality son metáforas";Opus 5.5 Medio;22-oct
+C105;1;1;1;1;0;C1: varios dobles sentidos apuntan a encuentros sexuales. C2: elogia su boca y figura. C3: soltera, vive su vida y pide lo que desea;Opus 5.5 Medio;22-oct
+C107;1;0;0;0;0;Ninguna categoría marcada: deseo romántico y baile sin acto sexual inequívoco, sin partes corporales nombradas, sin voz femenina propia ni violencia;Opus 5.5 Medio;22-oct
+C108;1;1;1;0;0;C1: varios dobles sentidos convergentes (cuerpo encima, sentarse sobre él, ganas). C2: elogia booty, cintura, caderas y trasero de ella;Opus 5.5 Medio;22-oct
+C111;1;1;1;1;0;C1: propone e imagina explícitamente el acto sexual. C2: elogia su trasero como objeto de deseo. C3: ella rechaza pertenecerle y decide sin pedir permiso;Opus 5.5 Medio;22-oct
+C115;1;1;0;1;0;C1: alusión directa a sexo oral como condición, reforzada por otros dobles sentidos. C3: mujer en primera persona impone condiciones y decide. Cuerpo autodescrito.;Opus 5.5 Medio;22-oct
+C116;1;1;0;0;0;C1: varias alusiones convergentes a encuentro sexual (sábanas, ‘te hago mía’, cambio de posición, lo hicieron en la playa). Sin partes corporales, agencia clara ni violencia.;Opus 5.5 Medio;22-oct
+C118;1;1;1;0;0;C1: dobles sentidos acumulados, desnudez y caricias íntimas durante el encuentro. C2: elogia explícitamente el trasero y la figura de ella.;Opus 5.5 Medio;22-oct
+C120;1;0;0;1;0;C3: ella decide salir, miente para hacerlo y lo llama por iniciativa propia. C1 en 0: solo alusiones ambiguas (degenere), sin acto sexual inequívoco.;Opus 5.5 Medio;22-oct
+C123;1;0;0;0;0;Ninguna categoría marcada: hay baile, elogio genérico y drogas, sin acto sexual, partes del cuerpo, voz femenina ni violencia literal inequívoca.;Opus 5.5 Medio;22-oct
+C127;1;1;1;1;0;C1: le quita la ropa interior y alude a poses y encuentros. C2: elogia silueta y boca. C3: ella busca al narrador, envía fotos y engaña a su pareja.;Opus 5.5 Medio;22-oct
+C128;1;1;1;0;0;C1: alusiones directas a sexo en posición específica y excitación de ella. C2: elogia repetidamente su trasero como objeto de deseo.;Opus 5.5 Medio;22-oct
+C134;1;1;1;0;0;C1: varios dobles sentidos y alusiones directas a un encuentro sexual (cuarto, desnudez, suite). C2: menciona el trasero de ella como motivo de deseo.;Opus 5.5 Medio;22-oct
+C138;1;1;0;0;0;C1: varios dobles sentidos convergentes (darle antes del amanecer, choque, roces y gritos) describen un encuentro sexual propuesto. Sin partes corporales específicas, agencia ni violencia.;Opus 5.5 Medio;22-oct
+C139;1;1;1;0;0;C1: alusiones sexuales directas a parejas pasadas y a sus genitales. C2: nombra los genitales de una mujer como objeto de deseo (‘totito inédito’).;Opus 5.5 Medio;22-oct
+C144;1;1;0;1;0;C1: varios dobles sentidos sexuales acumulados (excitación, humedad, encuentro a oscuras). C3: voz femenina en primera persona expresa su propio deseo y elige pareja.;Opus 5.5 Medio;22-oct
+C149;1;1;1;1;0;C1: encuentro sexual de anoche, relaciones sin protección y dobles sentidos convergentes. C2: elogio a su trasero. C3: ella toma la iniciativa, ignora a su pareja y decide.;Opus 5.5 Medio;22-oct
+C152;1;1;1;1;0;C1: alusiones reiteradas a actos sexuales consumados. C2: elogio explícito de su trasero. C3: ella decide salir, beber y anda independiente.;Opus 5.5 Medio;22-oct
+C153;1;1;1;0;1;C1: alusión directa al acto sexual y dobles sentidos acumulados. C2: elogio explícito del trasero. C4: mención literal de pistola (‘la corta’) y peines.;Opus 5.5 Medio;22-oct
+C158;1;1;0;0;0;"C1: propone explícitamente un encuentro sexual (comerla, hacerla suya, cama y escritorio). No nombra partes del cuerpo; ella no tiene voz ni decisión propia.";Opus 5.5 Medio;22-oct
+C160;1;1;0;0;0;"C1: describe relaciones sexuales en el asiento trasero del carro, desnudez y gritos. Sin partes corporales elogiadas; la iniciativa femenina es proyección del narrador.";Opus 5.5 Medio;22-oct

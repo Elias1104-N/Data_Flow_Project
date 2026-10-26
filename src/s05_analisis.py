@@ -61,6 +61,63 @@ def tendencia(base, var, c):
            nota=f"pendiente de Sen = {mkr.slope:.4f} por año; {len(anual)} años")
 
 
+def resumen_num(base, var):
+    d = base.groupby("periodo", observed=True)[var].describe()[["count", "mean", "25%", "50%", "75%"]]
+    return d.reindex(PERIODOS).rename(columns={"count": "n", "mean": "media", "50%": "mediana"}).round(4)
+
+
+def caja(grupos, ylabel, titulo, archivo, n_total):
+    fig, ax = plt.subplots(figsize=(7, 4))
+    ax.boxplot(list(grupos.values()), tick_labels=list(grupos.keys()))
+    ax.set_ylabel(ylabel)
+    ax.set_title(titulo)
+    ax.spines[["top", "right"]].set_visible(False)
+    fig.text(0.01, -0.02, f"n = {n_total} canciones. Fuente: listas de fin de año de Billboard "
+             "Hot Latin Songs (vía Wikipedia), 2010–2025.", fontsize=8)
+    fig.savefig(RES / archivo, dpi=200, bbox_inches="tight")
+    plt.close(fig)
+
+
+def grafico_kappas():
+    """Kappa de Claude contra el consenso, con IC y el umbral de validez."""
+    from src.config import KAPPA_MIN, IC_INF_MIN
+    k = pd.read_csv(RES / "tabla_kappas.csv")
+    k = k[k.comparacion == "Claude vs consenso"].set_index("categoria")
+    h = pd.read_csv(RES / "tabla_kappas.csv")
+    h = h[h.comparacion == "humano1 vs humano2"].set_index("categoria")
+    y = np.arange(len(k))
+    fig, ax = plt.subplots(figsize=(7, 3.6))
+    ax.errorbar(k.kappa, y, xerr=[k.kappa - k.ic_inf, k.ic_sup - k.kappa], fmt="o",
+                capsize=4, color="#1f5aa6", label="Claude vs consenso (IC 95 %)")
+    ax.plot(h.kappa.reindex(k.index), y - 0.18, "s", color="#999999", label="Humano 1 vs humano 2")
+    ax.axvline(KAPPA_MIN, ls="--", color="#b03a2e", lw=1)
+    ax.text(KAPPA_MIN + 0.01, -0.45, f"umbral κ = {KAPPA_MIN}", color="#b03a2e", fontsize=8)
+    ax.set_yticks(y, [f"{c} {NOMBRES[c]}" for c in k.index])
+    ax.set_xlim(-0.2, 1)
+    ax.set_ylim(len(k) - 0.5, -0.6)
+    ax.set_xlabel("Kappa de Cohen")
+    ax.set_title("Ninguna categoría alcanza el umbral de validez fijado")
+    ax.spines[["top", "right"]].set_visible(False)
+    ax.legend(fontsize=8, loc="upper center", bbox_to_anchor=(0.5, -0.18), ncol=2, frameon=False)
+    fig.text(0.01, -0.17, f"Submuestra de validación: n = 50. Regla: κ ≥ {KAPPA_MIN} y límite "
+             f"inferior del IC ≥ {IC_INF_MIN}. IC por bootstrap (2000 réplicas).", fontsize=8)
+    fig.savefig(RES / "fig_kappas.png", dpi=200, bbox_inches="tight")
+    plt.close(fig)
+
+
+def resumen_discrepancias():
+    ruta = RES / "discrepancias.csv"
+    if not ruta.exists():
+        return
+    d = pd.read_csv(ruta)
+    if d.tipo_final.isna().all():
+        print("Discrepancias sin clasificar (columna tipo_final vacía).")
+        return
+    t = pd.crosstab(d.categoria, d.tipo_final, margins=True, margins_name="Total")
+    t.to_csv(RES / "tabla_discrepancias.csv")
+    print("\nDiscrepancias Claude-consenso por tipo:\n" + t.to_string())
+
+
 def grafico(d, c, n_total):
     fig, ax = plt.subplots(figsize=(7, 4))
     ax.errorbar(d.index.astype(str), 100 * d.p,
@@ -123,13 +180,32 @@ def main():
     mkr = mk.original_test(base.groupby("anio").mattr.median().values)
     anotar("MATTR en el tiempo", "Mann-Kendall (mediana anual)", mkr.z, mkr.p,
            "tau de Kendall", mkr.Tau, nota=f"pendiente de Sen = {mkr.slope:.5f} por año")
-    fig, ax = plt.subplots(figsize=(7, 4))
-    ax.boxplot(list(grupos.values()), tick_labels=list(grupos.keys()))
-    ax.set_ylabel("MATTR (ventana de 50 palabras)")
-    ax.set_title("[Escriban el hallazgo] — riqueza léxica por periodo")
-    ax.spines[["top", "right"]].set_visible(False)
-    fig.savefig(RES / "fig_mattr_periodo.png", dpi=200, bbox_inches="tight")
-    plt.close(fig)
+    resumen_num(base, "mattr").to_csv(RES / "descriptivos_mattr.csv")
+    caja(grupos, "MATTR (ventana de 50 palabras)",
+         "La riqueza léxica sube en el periodo 2022–25", "fig_mattr_periodo.png", len(base))
+
+    # --- Complementario: léxico (no depende de Claude ni de la validación) ---
+    # Mide MENCIONES de vocabulario, no las categorías C1/C2: no responde la pregunta principal.
+    for dim, nombre in [("sexual", "léxico sexual"), ("cuerpo", "léxico del cuerpo")]:
+        var = f"lex_{dim}_x1000"
+        if var not in base.columns:
+            continue
+        g = {k: x[var].values for k, x in base.groupby("periodo", observed=True)}
+        H, p = stats.kruskal(*g.values())
+        anotar(f"Complementario: {nombre} por periodo", "Kruskal-Wallis", H, p,
+               "épsilon cuadrado", H / (len(base) - 1), nota="menciones por 1000 palabras; exploratorio")
+        mkr = mk.original_test(base.groupby("anio")[var].median().values)
+        anotar(f"Complementario: {nombre} en el tiempo", "Mann-Kendall (mediana anual)", mkr.z, mkr.p,
+               "tau de Kendall", mkr.Tau, nota=f"pendiente de Sen = {mkr.slope:.4f} por año; exploratorio")
+        r = resumen_num(base, var)
+        r["%_con_alguna_mencion"] = (base.groupby("periodo", observed=True)[f"lex_{dim}"]
+                                     .apply(lambda x: 100 * (x > 0).mean()).reindex(PERIODOS).round(1))
+        r.to_csv(RES / f"descriptivos_lex_{dim}.csv")
+        caja(g, f"Menciones de {nombre} por 1000 palabras", f"Complementario: {nombre} por periodo",
+             f"fig_lex_{dim}_periodo.png", len(base))
+
+    grafico_kappas()
+    resumen_discrepancias()
 
     tabla = pd.DataFrame(pruebas)
     tabla.round(4).to_csv(RES / "pruebas.csv", index=False)

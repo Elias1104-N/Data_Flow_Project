@@ -24,7 +24,7 @@ CATS = ["C1", "C2", "C3", "C4"]   # C1 sexual explícito, C2 cuerpo, C3 agencia 
 # "manual": se codifica en claude.ai y se llena data/codificacion_llm.csv a mano.
 # "api":    se codifica con la API de Anthropic (requiere ANTHROPIC_API_KEY en .env).
 MODO_LLM = "manual"
-MODELO = "claude-sonnet-5-5"      # anoten aquí el modelo exacto que usen; es parte del instrumento
+MODELO = "claude-opus-5-5"      # modelo exacto usado; es parte del instrumento
 
 # --- Regla de validez (paso 6), fijada ANTES de ver resultados --------------
 KAPPA_MIN = 0.61

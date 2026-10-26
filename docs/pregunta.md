@@ -7,7 +7,7 @@ explícito, según la definición de la categoría C1 del libro de códigos?
 
 - Unidad de análisis: la canción.
 - Qué se cuenta: canciones con C1 = 1.
-- Sobre qué muestra: 160 canciones: todas las de 2010–13 (16) y 2014–17 (44), porque el marco no tiene más, y 50 sorteadas en cada uno de 2018–21 y 2022–25.
+- Sobre qué muestra: 160 canciones (2010–13: 16 y 2014–17: 44, ambos por censo; 2018–21: 50; 2022–25: 50).
 
 H0: la probabilidad de que una canción tenga contenido sexual explícito no cambia con el año (β_año = 0).
 H1: esa probabilidad cambia con el año (β_año ≠ 0).

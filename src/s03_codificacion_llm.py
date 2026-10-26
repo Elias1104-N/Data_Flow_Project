@@ -14,7 +14,7 @@ import json
 import re
 from datetime import date
 import pandas as pd
-from src.config import DATA, DOCS, LETRAS, MODELO, MODO_LLM, CATS
+from src.config import DATA, DOCS, LETRAS, MODELO, MODO_LLM, CATS, leer_csv
 
 SALIDA = DATA / "codificacion_llm.csv"
 COLS = ["id", "es_validacion"] + [f"llm_{c}" for c in CATS] + ["llm_justificacion", "modelo", "fecha"]
@@ -31,7 +31,7 @@ def crear_plantilla():
 
 
 def revisar_completa():
-    cod = pd.read_csv(SALIDA, dtype={"llm_justificacion": str})
+    cod = leer_csv(SALIDA)
     llm = cod[[f"llm_{c}" for c in CATS]]
     faltan = cod[llm.isna().any(axis=1)]
     malos = cod[~llm.isin([0, 1]).all(axis=1) & ~llm.isna().any(axis=1)]
