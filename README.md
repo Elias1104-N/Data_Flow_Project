@@ -13,7 +13,10 @@ reggaetón exitosas con contenido sexual explícito?
 
 ## Antes de empezar
 
-- Necesitan **Python 3.10 o superior** y **PyCharm**.
+- Necesitan **Python 3.10 o superior**. El proyecto es Python estándar: corre en
+  **cualquier IDE** (PyCharm, VS Code, Spyder) o desde la terminal, en Windows, macOS o Linux.
+  La única condición es ejecutar `main.py` con la **carpeta raíz del proyecto** como
+  directorio de trabajo. Abajo están los pasos para PyCharm y para la terminal.
 - El repositorio **no incluye el entorno virtual** (la carpeta `.venv` o `venv`, con las
   librerías). Cada persona lo crea en su computador con los pasos de abajo:
   1. Crear el entorno: esto genera la carpeta, solo con Python.
@@ -21,7 +24,7 @@ reggaetón exitosas con contenido sexual explícito?
 - La carpeta `resultados/` aparece vacía en GitHub a propósito: tablas y gráficos se
   generan al correr `main.py`.
 
-## Cómo correrlo en PyCharm
+## Cómo correrlo en PyCharm (ejemplo de IDE)
 
 1. **File > Open** y elijan la carpeta `Data_Flow_Project` (la carpeta, no un archivo).
 2. **Intérprete:** abajo a la derecha, clic en el intérprete > *Add New Interpreter* >
@@ -40,7 +43,7 @@ reggaetón exitosas con contenido sexual explícito?
    pero **no abran en Excel** los CSV que genera el código (`marco_muestral.csv`, `muestra.csv`):
    Excel puede cambiarles el formato al guardar.
 
-## Cómo correrlo desde la terminal
+## Cómo correrlo desde la terminal (o desde VS Code, Spyder, etc.)
 
 ```bash
 python -m venv .venv
@@ -120,9 +123,20 @@ texto largo.
 - **Riqueza léxica (secundaria 2):** el MATTR sube con el tiempo (Kruskal-Wallis, ε² = 0,16;
   Mann-Kendall τ = 0,78, pendiente de Sen ≈ +0,0076 por año). El cambio se concentra en 2022–25.
 
-## Reproducir desde cero (sesión limpia)
+## Reproducir desde cero (sesión limpia, cualquier computador)
 
 Un clon limpio del repositorio corre completo con `python main.py`, sin letras: el paso de
 medidas de texto detecta que `letras/` está vacía y usa la `data/base_texto.csv` versionada.
 La muestra no se vuelve a sortear porque `data/muestra.csv` existe; si se borra, el sorteo con
 la semilla 2026 reproduce exactamente la misma muestra y la misma submuestra de validación.
+
+Comprobado en un computador distinto (Linux, Python 3.13) con un clon limpio: el flujo corrió
+completo y los kappas, la muestra y la base analítica salieron idénticos a los del equipo
+(Windows). Las versiones exactas de las librerías están fijadas en `requirements.txt`.
+
+Qué **no** se puede repetir desde el repositorio, y por qué:
+- Las medidas de texto desde cero, porque las letras no se publican (derechos de autor). Quien
+  tenga las letras en `letras/` (fuentes en `registro_letras.csv`) puede recalcularlas.
+- La codificación con Claude, porque se hizo a mano en claude.ai y un modelo de lenguaje no
+  responde siempre igual. Por eso su salida queda guardada en `data/codificacion_llm.csv`, y
+  todo el análisis posterior parte de ese archivo.
